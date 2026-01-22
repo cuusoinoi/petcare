@@ -1,0 +1,11 @@
+# Redirect all requests to public folder
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect everything except public folder to public
+    RewriteCond %{REQUEST_URI} !^/petcare/public
+    RewriteRule ^(.*)$ /petcare/public/$1 [L]
+</IfModule>
+
+# Disable directory listing
+Options -Indexes

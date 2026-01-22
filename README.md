@@ -11,7 +11,6 @@ Hệ thống quản lý phòng khám thú y toàn diện được xây dựng b�
 
 ## 📋 Mục Lục
 
-- [Tính Năng](#-tính-năng)
 - [Công Nghệ Sử Dụng](#-công-nghệ-sử-dụng)
 - [Cài Đặt](#-cài-đặt)
 - [Cấu Trúc Dự Án](#-cấu-trúc-dự-án)
@@ -19,91 +18,6 @@ Hệ thống quản lý phòng khám thú y toàn diện được xây dựng b�
 - [Hướng Dẫn Sử Dụng](#-hướng-dẫn-sử-dụng)
 - [Thông Tin Đăng Nhập](#-thông-tin-đăng-nhập)
 - [Liên Hệ](#-liên-hệ)
-
----
-
-## ✨ Tính Năng
-
-### 🔐 Phân Quyền Người Dùng
-
-- **Admin**: Toàn quyền quản lý hệ thống
-- **Staff**: Quyền quản lý nghiệp vụ (không quản lý user)
-- **Customer**: Quyền xem thông tin và đặt lịch
-
-### 👨‍💼 Giao Diện Admin
-
-#### 1. **Dashboard**
-- Thống kê tổng quan: số khách hàng, thú cưng, lịch hẹn, hóa đơn
-- Biểu đồ doanh thu theo tháng
-- Biểu đồ lượt khám và check-in/check-out
-- Tỷ trọng doanh thu theo loại dịch vụ
-
-#### 2. **Quản Lý Chính**
-- **Khách hàng**: CRUD thông tin khách hàng, tìm kiếm, phân trang
-- **Thú cưng**: Quản lý thông tin thú cưng (tên, loài, giới tính, ngày sinh, cân nặng, v.v.)
-- **Bác sĩ**: Quản lý thông tin bác sĩ
-
-#### 3. **Khám & Điều Trị**
-- **Khám bệnh**: Tạo và quản lý phiếu khám, lịch sử khám bệnh
-- **Liệu trình điều trị**: 
-  - Quản lý liệu trình điều trị
-  - Quản lý các buổi điều trị trong liệu trình
-  - Chẩn đoán bệnh
-  - Kê đơn thuốc
-- **Tiêm chủng**: Quản lý lịch sử tiêm chủng cho thú cưng
-
-#### 4. **Lưu Chuồng & Hóa Đơn**
-- **Lưu chuồng**: Check-in/Check-out thú cưng, tự động tạo hóa đơn khi checkout
-- **Hóa đơn**: Tạo và quản lý hóa đơn, chi tiết dịch vụ
-- **Mẫu in**: Xem trước và in hóa đơn, giấy cam kết
-
-#### 5. **Danh Mục**
-- **Dịch vụ**: Quản lý các loại dịch vụ và giá
-- **Thuốc**: Quản lý danh mục thuốc
-- **Vaccine**: Quản lý danh mục vaccine
-
-#### 6. **Quản Trị**
-- **Người dùng**: Quản lý tài khoản, đổi mật khẩu
-- **Cài đặt**: Thông tin phòng khám (tên, địa chỉ, số điện thoại)
-
-#### 7. **Lịch Hẹn**
-- Xem danh sách lịch hẹn từ khách hàng
-- Cập nhật trạng thái lịch hẹn (Chờ xác nhận, Đã xác nhận, Hoàn thành, Đã hủy)
-- Xem và chỉnh sửa chi tiết lịch hẹn
-
-### 👤 Giao Diện Customer
-
-#### 1. **Trang Chủ**
-- Giới thiệu phòng khám
-- Dịch vụ nổi bật
-- Nút đặt lịch nhanh
-- Thông tin về phòng khám
-
-#### 2. **Dịch Vụ**
-- Danh sách đầy đủ các dịch vụ
-- Bảng giá chi tiết
-
-#### 3. **Liên Hệ**
-- Thông tin liên hệ phòng khám
-- Địa chỉ, số điện thoại
-
-#### 4. **Đặt Lịch**
-- Đặt lịch hẹn khám/spa/tiêm chủng
-- Chọn thú cưng, bác sĩ, dịch vụ, thời gian
-- Xem lịch hẹn của mình
-
-#### 5. **Dashboard Khách Hàng**
-- **Tổng quan**: Thống kê thú cưng, lịch hẹn, hóa đơn
-- **Thông tin cá nhân**: Cập nhật thông tin
-- **Thú cưng**: Quản lý thú cưng của mình
-- **Lịch sử khám bệnh**: Xem chi tiết các lần khám
-- **Đơn thuốc**: Xem các đơn thuốc đã kê
-- **Lịch tiêm chủng**: Xem lịch sử và lịch tiêm sắp tới
-- **Hóa đơn**: Xem và in hóa đơn
-
-#### 6. **Đăng Ký/Đăng Nhập**
-- Đăng ký bằng số điện thoại
-- Đăng nhập bằng số điện thoại + OTP (mặc định: 123456)
 
 ---
 
@@ -150,43 +64,10 @@ cd petcare
 ### Bước 3: Tạo Database
 
 1. Mở **phpMyAdmin** (http://localhost/phpmyadmin)
-2. Tạo database mới tên `petcare`
+2. Tạo database mới tên `petcare` (utf8mb4_unicode_ci)
 3. Import file `petcare_database.sql` vào database vừa tạo
 
-```sql
--- Hoặc chạy lệnh MySQL
-mysql -u root petcare < petcare_database.sql
-```
-
-### Bước 4: Cấu hình Environment
-
-1. Copy file `.env` (nếu chưa có, tạo từ file `env`)
-2. Cập nhật thông tin database trong `.env`:
-
-```env
-database.default.hostname = localhost
-database.default.database = petcare
-database.default.username = root
-database.default.password = 
-database.default.DBDriver = MySQLi
-```
-
-3. Cập nhật baseURL:
-
-```env
-app.baseURL = 'http://localhost/petcare/'
-```
-
-### Bước 5: Cấu hình Apache
-
-1. Kiểm tra `mod_rewrite` đã được bật trong `C:\xampp\apache\conf\httpd.conf`:
-   ```apache
-   LoadModule rewrite_module modules/mod_rewrite.so
-   ```
-
-2. Restart Apache trong XAMPP Control Panel
-
-### Bước 6: Kiểm tra
+### Bước 4: Kiểm tra
 
 1. Truy cập: `http://localhost/petcare`
 2. Đăng nhập admin: `http://localhost/petcare/admin`
@@ -298,7 +179,7 @@ petcare/
 
 #### Đăng nhập
 1. Truy cập: `http://localhost/petcare/admin`
-2. Nhập username và password
+2. Nhập username `admin` và password `123456`
 3. Click "Đăng nhập"
 
 #### Quản lý Khách hàng
@@ -388,9 +269,7 @@ petcare/
 Sau khi import database, sử dụng tài khoản mặc định:
 
 - **Username**: `admin`
-- **Password**: `admin` (hoặc kiểm tra trong database)
-
-> ⚠️ **Lưu ý**: Nên đổi mật khẩu ngay sau lần đăng nhập đầu tiên!
+- **Password**: `123456`
 
 ### Customer
 
