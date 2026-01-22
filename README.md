@@ -1,11 +1,11 @@
-# UIT Petcare - Hệ Thống Quản Lý Phòng Khám Thú Y
+# UIT Petcare - Hệ Thống Chăm Sóc Thú Cưng
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.x-purple)
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-4.x-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Hệ thống quản lý phòng khám thú y toàn diện được xây dựng bằng **CodeIgniter 4**, hỗ trợ quản lý khách hàng, thú cưng, lịch hẹn, hóa đơn và các dịch vụ chăm sóc thú cưng. Hệ thống bao gồm **giao diện admin** cho nhân viên phòng khám và **giao diện customer** cho khách hàng đặt lịch và tra cứu thông tin.
+Hệ thống chăm sóc thú cưng toàn diện được xây dựng bằng **CodeIgniter 4**, hỗ trợ quản lý khách hàng, thú cưng, lịch hẹn, hóa đơn và các dịch vụ chăm sóc thú cưng. Hệ thống bao gồm **giao diện admin** cho nhân viên phòng khám và **giao diện customer** cho khách hàng đặt lịch và tra cứu thông tin.
 
 ---
 
