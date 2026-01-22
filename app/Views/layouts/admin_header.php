@@ -21,9 +21,10 @@ $currentUser = $userModel->getUserByUsername(session()->get('username'));
         </div>
     </div>
     <div class="topbar__actions">
-        <button id="themeToggle" class="theme-toggle" title="Chuyển giao diện">
-            <i class="fa-solid fa-moon"></i>
-        </button>
+        <a href="<?= site_url('customer') ?>" target="_blank" class="btn-customer-link" title="Xem trang Customer">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Customer</span>
+        </a>
         <div class="topbar__user">
             <div class="topbar__user-info">
                 <img src="<?= base_url('admin_assets/images/' . ($currentUser['avatar'] ?? 'default-avatar.jpg')) ?>" alt="avatar" class="topbar__avatar" />
@@ -36,6 +37,9 @@ $currentUser = $userModel->getUserByUsername(session()->get('username'));
                 <a href="<?= site_url('admin/users/change-password') ?>" class="topbar__changepassword">
                     <i class="fa-solid fas fa-key"></i> Đổi mật khẩu
                 </a>
+                <button id="themeToggle" class="topbar__theme-toggle" title="Chuyển giao diện">
+                    <i class="fa-solid fa-moon"></i> <span id="themeToggleText">Giao diện tối</span>
+                </button>
                 <a href="<?= site_url('admin/logout') ?>" class="topbar__logout">
                     <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
                 </a>

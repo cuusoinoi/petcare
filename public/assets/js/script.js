@@ -113,12 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const themeToggle = document.getElementById('themeToggle');
     const icon = themeToggle?.querySelector('i');
+    const themeText = document.getElementById('themeToggleText');
     const savedTheme = localStorage.getItem('theme');
+
+    // Function to update theme text and icon
+    function updateThemeDisplay(isDark) {
+        if (icon) {
+            icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        }
+        if (themeText) {
+            themeText.textContent = isDark ? 'Giao diện sáng' : 'Giao diện tối';
+        }
+    }
 
     // Load saved theme
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
-        if (icon) icon.classList.replace('fa-moon', 'fa-sun');
+        updateThemeDisplay(true);
+    } else {
+        updateThemeDisplay(false);
     }
 
     // Update chart theme on load
@@ -132,9 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const isDark = body.classList.contains('dark-mode');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-        if (icon) {
-            icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
-        }
+        updateThemeDisplay(isDark);
 
         if (typeof updateChartTheme === 'function') {
             updateChartTheme();
