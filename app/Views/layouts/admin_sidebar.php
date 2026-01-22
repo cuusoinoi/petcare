@@ -125,9 +125,9 @@ function submenuActiveClass($path, $currentUri) {
             </div>
         </div>
 
-        <!-- Nhóm 3: Lưu chuồng & Hóa đơn -->
+        <!-- Nhóm 3: Lưu chuồng -->
         <div class="sidebar__group">
-            <div class="sidebar__group-title">Lưu chuồng & Hóa đơn</div>
+            <div class="sidebar__group-title">Lưu chuồng</div>
 
             <div class="sidebar__item sidebar__item--has-submenu <?= isMenuActive('admin/pet-enclosures', $currentUri) ? 'sidebar__item--active sidebar__item--open' : '' ?>">
                 <div class="sidebar__link">
@@ -141,6 +141,11 @@ function submenuActiveClass($path, $currentUri) {
                 </div>
                 <div class="sidebar__submenu-popup"></div>
             </div>
+        </div>
+
+        <!-- Nhóm 4: Hóa đơn -->
+        <div class="sidebar__group">
+            <div class="sidebar__group-title">Hóa đơn</div>
 
             <div class="sidebar__item sidebar__item--has-submenu <?= isMenuActive('admin/invoices', $currentUri) || isMenuActive('admin/printing-template', $currentUri) ? 'sidebar__item--active sidebar__item--open' : '' ?>">
                 <div class="sidebar__link">
@@ -156,7 +161,7 @@ function submenuActiveClass($path, $currentUri) {
             </div>
         </div>
 
-        <!-- Nhóm 4: Danh mục -->
+        <!-- Nhóm 5: Danh mục -->
         <div class="sidebar__group">
             <div class="sidebar__group-title">Danh mục</div>
 
@@ -200,7 +205,7 @@ function submenuActiveClass($path, $currentUri) {
             </div>
         </div>
 
-        <!-- Nhóm 5: Hệ thống -->
+        <!-- Nhóm 6: Hệ thống -->
         <div class="sidebar__group">
             <div class="sidebar__group-title">Hệ thống</div>
 

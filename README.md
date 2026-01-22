@@ -205,7 +205,7 @@ petcare/
 4. Click **👁️** để xem chi tiết và chỉnh sửa
 
 #### Tạo Hóa Đơn
-1. Vào menu **Lưu chuồng & Hóa đơn** → **Hóa đơn** → **Thêm hóa đơn**
+1. Vào menu **Hóa đơn** → **Thêm hóa đơn**
 2. Chọn khách hàng, thú cưng
 3. Thêm các dịch vụ và số lượng
 4. Giá sẽ tự động lấy từ bảng dịch vụ
@@ -213,7 +213,7 @@ petcare/
 6. Lưu hóa đơn
 
 #### Check-in/Check-out Chuồng
-1. Vào menu **Lưu chuồng & Hóa đơn** → **Lưu chuồng**
+1. Vào menu **Lưu chuồng**
 2. **Check-in**: Thêm thú cưng vào chuồng
 3. **Checkout**: Click nút checkout, hệ thống tự động tính phí và tạo hóa đơn
 
