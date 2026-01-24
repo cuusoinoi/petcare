@@ -44,8 +44,20 @@ class UserController extends BaseController
      */
     public function add()
     {
+        $roles = $this->userModel->getAvailableRoles();
+        
+        // Map roles to labels
+        $roleLabels = [
+            'admin' => 'Quản trị viên',
+            'staff' => 'Nhân viên',
+            'customer' => 'Khách hàng',
+            'doctor' => 'Bác sĩ'
+        ];
+        
         $data = [
-            'title' => 'Thêm người dùng - UIT Petcare'
+            'title' => 'Thêm người dùng - UIT Petcare',
+            'roles' => $roles,
+            'roleLabels' => $roleLabels
         ];
 
         return view('admin/user/add_user', $data);
@@ -111,9 +123,21 @@ class UserController extends BaseController
             return redirect()->to('/admin/users');
         }
 
+        $roles = $this->userModel->getAvailableRoles();
+        
+        // Map roles to labels
+        $roleLabels = [
+            'admin' => 'Quản trị viên',
+            'staff' => 'Nhân viên',
+            'customer' => 'Khách hàng',
+            'doctor' => 'Bác sĩ'
+        ];
+        
         $data = [
             'title' => 'Chỉnh sửa người dùng - UIT Petcare',
-            'user' => $user
+            'user' => $user,
+            'roles' => $roles,
+            'roleLabels' => $roleLabels
         ];
 
         return view('admin/user/edit_user', $data);

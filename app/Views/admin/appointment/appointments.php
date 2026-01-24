@@ -113,7 +113,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <a href="<?= site_url('admin/appointments/delete/' . $appointment['appointment_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa lịch hẹn này?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/appointments/delete/' . $appointment['appointment_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa lịch hẹn này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

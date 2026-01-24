@@ -34,6 +34,7 @@
                         <tr>
                             <th>Tên đăng nhập</th>
                             <th>Họ tên</th>
+                            <th>Vai trò</th>
                             <th>Ngày tạo</th>
                             <th>Hành động</th>
                         </tr>
@@ -41,20 +42,44 @@
                     <tbody>
                         <?php if (!empty($users)): ?>
                             <?php foreach ($users as $row): ?>
+                                <?php
+                                $roleLabels = [
+                                    'admin' => 'Quản trị viên',
+                                    'staff' => 'Nhân viên',
+                                    'customer' => 'Khách hàng',
+                                    'doctor' => 'Bác sĩ'
+                                ];
+                                $roleColors = [
+                                    'admin' => '#dc3545',
+                                    'staff' => '#007bff',
+                                    'customer' => '#6c757d',
+                                    'doctor' => '#28a745'
+                                ];
+                                $role = $row['role'] ?? 'staff';
+                                $roleLabel = $roleLabels[$role] ?? ucfirst($role);
+                                $roleColor = $roleColors[$role] ?? '#6c757d';
+                                ?>
                                 <tr>
                                     <td><?= esc($row['username']) ?></td>
                                     <td><?= esc($row['fullname']) ?></td>
-                                    <td><?= date('d/m/Y H:i', strtotime($row['create_at'])) ?></td>
+                                    <td>
+                                        <span style="padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 1.2rem; font-weight: 500;
+                                            background: <?= $roleColor ?>20;
+                                            color: <?= $roleColor ?>;">
+                                            <?= esc($roleLabel) ?>
+                                        </span>
+                                    </td>
+                                    <td><?= !empty($row['create_at']) ? date('d/m/Y H:i', strtotime($row['create_at'])) : 'N/A' ?></td>
                                     <td>
                                         <div class="actions">
                                             <a href="<?= site_url('admin/users/edit/' . $row['id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/users/delete/' . $row['id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/users/delete/' . $row['id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa người dùng này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <tr><td colspan="4">Chưa có người dùng nào.</td></tr>
+                            <tr><td colspan="5">Chưa có người dùng nào.</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
@@ -71,7 +96,41 @@
         </main>
         <?= view('layouts/admin_footer') ?>
     </main>
-    <script src="<?= base_url('assets/js/script.js') ?>" defer></script>
+    <script>
+        // Đảm bảo confirmDelete được định nghĩa ngay lập tức
+        window.confirmDelete = function(message, url) {
+            // Nếu showConfirm đã được định nghĩa, sử dụng nó
+            if (typeof showConfirm === 'function') {
+                showConfirm(message || 'Bạn có chắc muốn xóa?', 'Xác nhận').then(result => {
+                    if (result && url) {
+                        window.location.href = url;
+                    }
+                });
+            } else {
+                // Fallback nếu script chưa load - chờ script load xong
+                const checkShowConfirm = setInterval(() => {
+                    if (typeof showConfirm === 'function') {
+                        clearInterval(checkShowConfirm);
+                        showConfirm(message || 'Bạn có chắc muốn xóa?', 'Xác nhận').then(result => {
+                            if (result && url) {
+                                window.location.href = url;
+                            }
+                        });
+                    }
+                }, 50);
+                
+                // Timeout sau 1 giây, sử dụng confirm mặc định
+                setTimeout(() => {
+                    clearInterval(checkShowConfirm);
+                    if (confirm(message || 'Bạn có chắc muốn xóa?')) {
+                        window.location.href = url;
+                    }
+                }, 1000);
+            }
+            return false;
+        };
+    </script>
+    <script src="<?= base_url('assets/js/script.js') ?>"></script>
     <script>
         document.getElementById("searchInput").addEventListener("keyup", function() {
             const filter = this.value.toLowerCase();

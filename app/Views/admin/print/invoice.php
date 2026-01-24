@@ -99,7 +99,7 @@
                             <td><?= esc($item['service_name'] ?? 'Dịch vụ') ?></td>
                             <td class="number"><?= $item['quantity'] ?></td>
                             <td class="number"><?= number_format($item['unit_price']) ?></td>
-                            <td class="number"><?= number_format($item['quantity'] * $item['unit_price']) ?></td>
+                            <td class="number"><?= number_format($item['total_price'] ?? ($item['quantity'] * $item['unit_price'])) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -107,8 +107,24 @@
                 <?php endif; ?>
             </tbody>
             <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Tổng tiền dịch vụ:</td>
+                    <td class="number"><?= number_format($invoice['subtotal'] ?? 0) ?> VNĐ</td>
+                </tr>
+                <?php if (!empty($invoice['discount']) && $invoice['discount'] > 0): ?>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Giảm giá:</td>
+                    <td class="number">-<?= number_format($invoice['discount']) ?> VNĐ</td>
+                </tr>
+                <?php endif; ?>
+                <?php if (!empty($invoice['deposit']) && $invoice['deposit'] > 0): ?>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Đã đặt cọc:</td>
+                    <td class="number">-<?= number_format($invoice['deposit']) ?> VNĐ</td>
+                </tr>
+                <?php endif; ?>
                 <tr class="total-row">
-                    <td colspan="4" style="text-align: right;">TỔNG CỘNG:</td>
+                    <td colspan="4" style="text-align: right;">CÒN PHẢI THANH TOÁN:</td>
                     <td class="number"><?= number_format($invoice['total_amount']) ?> VNĐ</td>
                 </tr>
             </tfoot>

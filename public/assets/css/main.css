@@ -1078,7 +1078,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: var(--white-color);
+    background: var(--white-color);
+    color: var(--text-color);
     position: relative;
 }
 
@@ -1134,6 +1135,15 @@ body {
     color: rgba(255, 255, 255, 0.25);
     pointer-events: none;
     opacity: 0.9;
+}
+
+/* Dashboard cards with gradient backgrounds should have white text */
+.card.customer,
+.card.pet,
+.card.medical,
+.card.enclosure,
+.card.revenue {
+  color: var(--white-color);
 }
 
 .card.customer {
@@ -1502,4 +1512,139 @@ body.dark-mode .badge {
     .chart-card {
         flex: 1 1 100%;
     }
+}
+
+/* ===== CUSTOM MODAL (Thay thế alert/confirm) ===== */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-modal-overlay.active {
+    opacity: 1;
+}
+
+.custom-modal {
+    background: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10001;
+    opacity: 0;
+}
+
+.custom-modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.custom-modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.custom-modal-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-modal-close {
+    background: none;
+    border: none;
+    font-size: 2.4rem;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.custom-modal-close:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.custom-modal-body {
+    padding: 24px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.custom-modal-body p {
+    margin: 0;
+}
+
+.custom-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    background: #f8f9fa;
+}
+
+.custom-modal-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 100px;
+}
+
+.custom-modal-btn-primary {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.custom-modal-btn-primary:hover {
+    background: var(--light-primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.custom-modal-btn-secondary {
+    background: #6c757d;
+    color: var(--white-color);
+}
+
+.custom-modal-btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }

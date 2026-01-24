@@ -82,6 +82,10 @@ class InvoiceController extends BaseController
      */
     public function store()
     {
+        if (strtolower($this->request->getMethod()) !== 'post') {
+            return redirect()->to('/admin/invoices/add');
+        }
+
         $customer_id = $this->request->getPost('customer_id');
         $pet_id = $this->request->getPost('pet_id');
         $invoice_date = $this->request->getPost('invoice_date') ?? date('Y-m-d');
@@ -98,13 +102,18 @@ class InvoiceController extends BaseController
         $data = [
             'customer_id' => $customer_id,
             'pet_id' => $pet_id,
-            'pet_enclosure_id' => null,
             'invoice_date' => $invoice_date,
             'discount' => $discount,
             'subtotal' => $subtotal,
             'deposit' => $deposit,
             'total_amount' => $total_amount
         ];
+        
+        // Add pet_enclosure_id if provided, otherwise leave as NULL
+        $pet_enclosure_id = $this->request->getPost('pet_enclosure_id');
+        if (!empty($pet_enclosure_id)) {
+            $data['pet_enclosure_id'] = (int)$pet_enclosure_id;
+        }
 
         $invoiceId = $this->invoiceModel->insert($data);
 
@@ -169,6 +178,10 @@ class InvoiceController extends BaseController
      */
     public function update($id)
     {
+        if (strtolower($this->request->getMethod()) !== 'post') {
+            return redirect()->to('/admin/invoices');
+        }
+
         $invoice = $this->invoiceModel->find($id);
 
         if (!$invoice) {
@@ -198,6 +211,14 @@ class InvoiceController extends BaseController
             'deposit' => $deposit,
             'total_amount' => $total_amount
         ];
+        
+        // Add pet_enclosure_id if provided, otherwise leave as NULL
+        $pet_enclosure_id = $this->request->getPost('pet_enclosure_id');
+        if (!empty($pet_enclosure_id)) {
+            $data['pet_enclosure_id'] = (int)$pet_enclosure_id;
+        } else {
+            $data['pet_enclosure_id'] = null;
+        }
 
         if ($this->invoiceModel->update($id, $data)) {
             // Delete old invoice details

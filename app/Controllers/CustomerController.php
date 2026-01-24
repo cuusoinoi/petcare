@@ -39,6 +39,24 @@ class CustomerController extends BaseController
     }
 
     /**
+     * API endpoint để lấy dữ liệu homepage (cho auto-refresh)
+     */
+    public function getHomeData()
+    {
+        $services = $this->serviceTypeModel->findAll();
+        $doctors = $this->doctorModel->findAll();
+
+        return $this->response->setJSON([
+            'success' => true,
+            'data' => [
+                'totalServices' => count($services),
+                'totalDoctors' => count($doctors),
+                'timestamp' => time()
+            ]
+        ]);
+    }
+
+    /**
      * Trang dịch vụ
      */
     public function services()

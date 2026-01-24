@@ -64,7 +64,7 @@
                                                 <a href="<?= site_url('admin/pet-enclosures/checkout/' . $row['pet_enclosure_id']) ?>" class="btn btn-icon btn-success" title="Checkout"><i class="fas fa-sign-out-alt"></i></a>
                                             <?php endif; ?>
                                             <a href="<?= site_url('admin/pet-enclosures/edit/' . $row['pet_enclosure_id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/pet-enclosures/delete/' . $row['pet_enclosure_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/pet-enclosures/delete/' . $row['pet_enclosure_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa lưu chuồng này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

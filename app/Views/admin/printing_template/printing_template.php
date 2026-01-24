@@ -60,7 +60,7 @@
         document.getElementById('btnRenderCommit').addEventListener('click', function() {
             let invoiceId = document.getElementById('printInvoiceSelect').value;
             if (!invoiceId) {
-                alert("Vui lòng chọn hóa đơn!");
+                showAlert("Vui lòng chọn hóa đơn!", "Thông báo", "warning");
                 return;
             }
 
@@ -76,7 +76,7 @@
         document.getElementById('btnRenderInvoice').addEventListener('click', function() {
             let invoiceId = document.getElementById('printInvoiceSelect').value;
             if (!invoiceId) {
-                alert("Vui lòng chọn hóa đơn!");
+                showAlert("Vui lòng chọn hóa đơn!", "Thông báo", "warning");
                 return;
             }
 
@@ -92,7 +92,7 @@
         document.getElementById('btnPrintNow').addEventListener('click', function() {
             var printContent = document.getElementById('printArea').innerHTML;
             if (!printContent.trim()) {
-                alert("Chưa có nội dung để in!");
+                showAlert("Chưa có nội dung để in!", "Thông báo", "warning");
                 return;
             }
             window.print();

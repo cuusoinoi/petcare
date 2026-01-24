@@ -57,10 +57,10 @@
                                         <div class="actions">
                                             <a href="<?= site_url('admin/treatment-courses/' . $row['treatment_course_id'] . '/sessions') ?>" class="btn btn-icon btn-steth" title="Buổi điều trị"><i class="fas fa-stethoscope"></i></a>
                                             <?php if ($row['status'] == 1): ?>
-                                                <a href="<?= site_url('admin/treatment-courses/complete/' . $row['treatment_course_id']) ?>" class="btn btn-icon btn-success" title="Kết thúc" onclick="return confirm('Kết thúc liệu trình này?')"><i class="fas fa-check"></i></a>
+                                                <a href="<?= site_url('admin/treatment-courses/complete/' . $row['treatment_course_id']) ?>" class="btn btn-icon btn-success" title="Kết thúc" onclick="return confirmDelete('Bạn có chắc muốn kết thúc liệu trình này?', this.href)"><i class="fas fa-check"></i></a>
                                             <?php endif; ?>
                                             <a href="<?= site_url('admin/treatment-courses/edit/' . $row['treatment_course_id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/treatment-courses/delete/' . $row['treatment_course_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/treatment-courses/delete/' . $row['treatment_course_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa liệu trình này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

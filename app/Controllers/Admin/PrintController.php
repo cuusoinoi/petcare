@@ -15,6 +15,7 @@ use App\Models\DiagnosisModel;
 use App\Models\PrescriptionModel;
 use App\Models\DoctorModel;
 use App\Models\PetEnclosureModel;
+use App\Models\ServiceTypeModel;
 
 class PrintController extends BaseController
 {
@@ -30,6 +31,7 @@ class PrintController extends BaseController
     protected $prescriptionModel;
     protected $doctorModel;
     protected $petEnclosureModel;
+    protected $serviceTypeModel;
 
     public function __construct()
     {
@@ -45,6 +47,7 @@ class PrintController extends BaseController
         $this->prescriptionModel = new PrescriptionModel();
         $this->doctorModel = new DoctorModel();
         $this->petEnclosureModel = new PetEnclosureModel();
+        $this->serviceTypeModel = new ServiceTypeModel();
     }
 
     /**
@@ -62,6 +65,12 @@ class PrintController extends BaseController
         $pet = $this->petModel->find($invoice['pet_id']);
         $details = $this->invoiceDetailModel->getDetailsByInvoiceId($id);
         $settings = $this->settingModel->getSettings();
+
+        // Get service names for details
+        foreach ($details as &$detail) {
+            $service = $this->serviceTypeModel->find($detail['service_type_id']);
+            $detail['service_name'] = $service['service_name'] ?? 'Dịch vụ';
+        }
 
         $data = [
             'title' => 'In hóa đơn - UIT Petcare',

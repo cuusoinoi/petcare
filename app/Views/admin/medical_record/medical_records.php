@@ -59,7 +59,7 @@
                                         <div class="actions">
                                             <a href="<?= site_url('admin/print/medical-record/' . $row['medical_record_id']) ?>" class="btn btn-icon btn-print" title="In phiếu khám" target="_blank"><i class="fas fa-print"></i></a>
                                             <a href="<?= site_url('admin/medical-records/edit/' . $row['medical_record_id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/medical-records/delete/' . $row['medical_record_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/medical-records/delete/' . $row['medical_record_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa phiếu khám này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

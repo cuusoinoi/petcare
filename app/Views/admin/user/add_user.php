@@ -40,6 +40,18 @@
                         <label for="confirm_password">Xác nhận mật khẩu <span class="required-field">*</span></label>
                         <input type="password" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" required>
                     </div>
+                    <div class="form-group">
+                        <label for="role">Vai trò <span class="required-field">*</span></label>
+                        <select id="role" name="role" required>
+                            <?php foreach ($roles ?? ['staff'] as $role): ?>
+                                <?php 
+                                $label = $roleLabels[$role] ?? ucfirst($role);
+                                $selected = ($role === 'staff') ? 'selected' : '';
+                                ?>
+                                <option value="<?= esc($role) ?>" <?= $selected ?>><?= esc($label) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-save"><i class="fas fa-save"></i> Lưu</button>
                         <a href="<?= site_url('admin/users') ?>" class="btn btn-cancel">Hủy</a>

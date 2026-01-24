@@ -62,7 +62,7 @@
                                             <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/' . $row['treatment_session_id'] . '/diagnosis') ?>" class="btn btn-icon btn-diagnose" title="Chẩn đoán"><i class="fas fa-notes-medical"></i></a>
                                             <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/' . $row['treatment_session_id'] . '/prescription') ?>" class="btn btn-icon btn-prescription" title="Đơn thuốc"><i class="fas fa-prescription"></i></a>
                                             <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/edit/' . $row['treatment_session_id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/delete/' . $row['treatment_session_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Xóa buổi điều trị này?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/delete/' . $row['treatment_session_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa buổi điều trị này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

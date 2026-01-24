@@ -59,7 +59,7 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/' . $session['treatment_session_id'] . '/prescription/delete/' . $p['prescription_id']) ?>" class="btn btn-icon btn-delete" onclick="return confirm('Xóa thuốc này?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/treatment-courses/' . $course['treatment_course_id'] . '/sessions/' . $session['treatment_session_id'] . '/prescription/delete/' . $p['prescription_id']) ?>" class="btn btn-icon btn-delete" onclick="return confirmDelete('Bạn có chắc muốn xóa thuốc này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

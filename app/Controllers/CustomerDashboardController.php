@@ -90,6 +90,66 @@ class CustomerDashboardController extends BaseController
     }
 
     /**
+     * API endpoint để lấy dữ liệu dashboard (cho auto-refresh)
+     */
+    public function getDashboardData()
+    {
+        // Kiểm tra đăng nhập
+        if (session()->get('role') !== 'customer') {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Unauthorized'
+            ])->setStatusCode(401);
+        }
+
+        $customerId = session()->get('customer_id');
+        
+        // Thống kê
+        $totalPets = $this->petModel->where('customer_id', $customerId)->countAllResults();
+        $totalAppointments = $this->appointmentModel->where('customer_id', $customerId)->countAllResults();
+        $totalInvoices = $this->invoiceModel->where('customer_id', $customerId)->countAllResults();
+        
+        // Lịch hẹn sắp tới
+        $upcomingAppointments = $this->appointmentModel
+            ->select('appointments.*, pets.pet_name')
+            ->join('pets', 'pets.pet_id = appointments.pet_id', 'left')
+            ->where('appointments.customer_id', $customerId)
+            ->where('appointments.appointment_date >=', date('Y-m-d H:i:s'))
+            ->groupStart()
+                ->where('appointments.status', 'pending')
+                ->orWhere('appointments.status', 'confirmed')
+            ->groupEnd()
+            ->orderBy('appointments.appointment_date', 'ASC')
+            ->limit(5)
+            ->findAll();
+
+        // Format appointments for JSON
+        $formattedAppointments = [];
+        foreach ($upcomingAppointments as $apt) {
+            $formattedAppointments[] = [
+                'appointment_date' => date('d/m/Y H:i', strtotime($apt['appointment_date'])),
+                'pet_name' => $apt['pet_name'] ?? 'N/A',
+                'appointment_type' => $apt['appointment_type'],
+                'status' => $apt['status'],
+                'status_text' => $apt['status'] === 'confirmed' ? 'Đã xác nhận' : 'Chờ xác nhận',
+                'status_bg' => $apt['status'] === 'confirmed' ? '#d4edda' : '#fff3cd',
+                'status_color' => $apt['status'] === 'confirmed' ? '#155724' : '#856404'
+            ];
+        }
+
+        return $this->response->setJSON([
+            'success' => true,
+            'data' => [
+                'totalPets' => $totalPets,
+                'totalAppointments' => $totalAppointments,
+                'totalInvoices' => $totalInvoices,
+                'upcomingAppointments' => $formattedAppointments,
+                'timestamp' => time()
+            ]
+        ]);
+    }
+
+    /**
      * Quản lý thông tin cá nhân
      */
     public function profile()

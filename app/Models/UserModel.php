@@ -66,4 +66,26 @@ class UserModel extends Model
     {
         return $this->where('username', $username)->first();
     }
+
+    /**
+     * Get available roles from database ENUM
+     */
+    public function getAvailableRoles()
+    {
+        $db = \Config\Database::connect();
+        $query = $db->query("SHOW COLUMNS FROM `users` WHERE Field = 'role'");
+        $result = $query->getRow();
+        
+        if ($result && isset($result->Type)) {
+            // Extract ENUM values from Type string like: enum('admin','staff','customer')
+            preg_match("/enum\('(.+)'\)/i", $result->Type, $matches);
+            if (isset($matches[1])) {
+                $roles = explode("','", $matches[1]);
+                return $roles;
+            }
+        }
+        
+        // Fallback to default roles if can't get from database
+        return ['admin', 'staff', 'customer'];
+    }
 }

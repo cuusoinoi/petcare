@@ -57,7 +57,7 @@
                                         <div class="actions">
                                             <a href="<?= site_url('admin/print/invoice/' . $row['invoice_id']) ?>" class="btn btn-icon btn-print" title="In hóa đơn" target="_blank"><i class="fas fa-print"></i></a>
                                             <a href="<?= site_url('admin/invoices/edit/' . $row['invoice_id']) ?>" class="btn btn-icon btn-edit" title="Chỉnh sửa"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= site_url('admin/invoices/delete/' . $row['invoice_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<?= site_url('admin/invoices/delete/' . $row['invoice_id']) ?>" class="btn btn-icon btn-delete" title="Xóa" onclick="return confirmDelete('Bạn có chắc muốn xóa hóa đơn này?', this.href)"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

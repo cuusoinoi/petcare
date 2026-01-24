@@ -13,6 +13,7 @@ $routes->get('/', 'Home::index');
 $routes->group('customer', ['namespace' => 'App\Controllers'], function($routes) {
     // Public pages
     $routes->get('/', 'CustomerController::index');
+    $routes->get('api/home-data', 'CustomerController::getHomeData');
     $routes->get('services', 'CustomerController::services');
     $routes->get('contact', 'CustomerController::contact');
     
@@ -26,6 +27,7 @@ $routes->group('customer', ['namespace' => 'App\Controllers'], function($routes)
     // Protected customer routes
     $routes->group('dashboard', function($routes) {
         $routes->get('/', 'CustomerDashboardController::index');
+        $routes->get('api/data', 'CustomerDashboardController::getDashboardData');
         $routes->get('profile', 'CustomerDashboardController::profile');
         $routes->post('profile', 'CustomerDashboardController::profile');
         $routes->get('pets', 'CustomerDashboardController::pets');

@@ -162,11 +162,11 @@
             </div>
             <div class="about-stats">
                 <div class="stat-item">
-                    <div class="stat-number"><?= count($services ?? []) ?></div>
+                    <div class="stat-number" id="services-count"><?= count($services ?? []) ?></div>
                     <div class="stat-label">Dịch vụ</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number"><?= count($doctors ?? []) ?></div>
+                    <div class="stat-number" id="doctors-count"><?= count($doctors ?? []) ?></div>
                     <div class="stat-label">Bác sĩ</div>
                 </div>
                 <div class="stat-item">
@@ -177,5 +177,85 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-refresh homepage data mỗi 5 giây
+    const refreshInterval = 5000; // 5 giây
+    
+    // Lưu giá trị hiện tại để so sánh
+    let currentStats = {
+        totalServices: <?= count($services ?? []) ?>,
+        totalDoctors: <?= count($doctors ?? []) ?>
+    };
+    
+    function updateHomeData() {
+        const apiUrl = '<?= site_url('customer/api/home-data') ?>';
+        
+        fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Accept': 'application/json'
+            },
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                const stats = data.data;
+                
+                // Cập nhật số dịch vụ
+                const servicesCount = document.getElementById('services-count');
+                if (servicesCount) {
+                    const newValue = parseInt(stats.totalServices) || 0;
+                    const oldValue = parseInt(servicesCount.textContent.trim()) || 0;
+                    if (newValue !== oldValue) {
+                        servicesCount.textContent = newValue;
+                        animateUpdate(servicesCount);
+                        currentStats.totalServices = newValue;
+                    }
+                }
+                
+                // Cập nhật số bác sĩ
+                const doctorsCount = document.getElementById('doctors-count');
+                if (doctorsCount) {
+                    const newValue = parseInt(stats.totalDoctors) || 0;
+                    const oldValue = parseInt(doctorsCount.textContent.trim()) || 0;
+                    if (newValue !== oldValue) {
+                        doctorsCount.textContent = newValue;
+                        animateUpdate(doctorsCount);
+                        currentStats.totalDoctors = newValue;
+                    }
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching home data:', error);
+        });
+    }
+    
+    function animateUpdate(element) {
+        element.style.transform = 'scale(1.2)';
+        element.style.transition = 'transform 0.3s';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 300);
+    }
+    
+    // Bắt đầu auto-refresh
+    const intervalId = setInterval(updateHomeData, refreshInterval);
+    
+    // Cập nhật ngay khi trang load (sau 1 giây để tránh conflict với render ban đầu)
+    setTimeout(updateHomeData, 1000);
+    
+    console.log('Homepage auto-refresh started. Interval:', refreshInterval + 'ms');
+});
+</script>
 
 <?= view('layouts/customer_footer', ['settings' => $settings]) ?>

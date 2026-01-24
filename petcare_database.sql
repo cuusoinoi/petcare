@@ -164,7 +164,7 @@ CREATE TABLE invoices (
     invoice_id INT(11) AUTO_INCREMENT PRIMARY KEY,
     customer_id INT(11) NOT NULL,
     pet_id INT(11) NOT NULL,
-    pet_enclosure_id INT(11) NOT NULL,
+    pet_enclosure_id INT(11) DEFAULT NULL,
     invoice_date DATETIME NOT NULL,
     discount INT(11) DEFAULT 0,
     subtotal INT(11) NOT NULL,

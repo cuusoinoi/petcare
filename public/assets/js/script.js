@@ -190,3 +190,187 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     });
 });
+
+// Custom Alert và Confirm - Thay thế alert() và confirm() mặc định
+(function() {
+    // Tạo modal container nếu chưa có
+    if (!document.getElementById('custom-modal-container')) {
+        const modalContainer = document.createElement('div');
+        modalContainer.id = 'custom-modal-container';
+        modalContainer.innerHTML = `
+            <div class="custom-modal-overlay" id="custom-modal-overlay"></div>
+            <div class="custom-modal" id="custom-modal">
+                <div class="custom-modal-header">
+                    <h3 class="custom-modal-title" id="custom-modal-title"></h3>
+                    <button class="custom-modal-close" id="custom-modal-close">&times;</button>
+                </div>
+                <div class="custom-modal-body" id="custom-modal-body"></div>
+                <div class="custom-modal-footer" id="custom-modal-footer"></div>
+            </div>
+        `;
+        document.body.appendChild(modalContainer);
+    }
+
+    // Lưu trữ các handlers để có thể xóa
+    let currentHandlers = [];
+
+    // Xóa tất cả event listeners cũ
+    function clearHandlers() {
+        currentHandlers.forEach(handler => {
+            if (handler.element && handler.event && handler.fn) {
+                handler.element.removeEventListener(handler.event, handler.fn);
+            }
+        });
+        currentHandlers = [];
+    }
+
+    // Hàm hiển thị Alert đẹp
+    window.showAlert = function(message, title = 'Thông báo', type = 'info') {
+        return new Promise((resolve) => {
+            clearHandlers();
+            
+            const overlay = document.getElementById('custom-modal-overlay');
+            const modal = document.getElementById('custom-modal');
+            const modalTitle = document.getElementById('custom-modal-title');
+            const modalBody = document.getElementById('custom-modal-body');
+            const modalFooter = document.getElementById('custom-modal-footer');
+            const closeBtn = document.getElementById('custom-modal-close');
+
+            // Set icon và màu theo type
+            const icons = {
+                'info': '<i class="fas fa-info-circle"></i>',
+                'success': '<i class="fas fa-check-circle"></i>',
+                'warning': '<i class="fas fa-exclamation-triangle"></i>',
+                'error': '<i class="fas fa-times-circle"></i>'
+            };
+            const colors = {
+                'info': '#007bff',
+                'success': '#28a745',
+                'warning': '#ffc107',
+                'error': '#dc3545'
+            };
+
+            modalTitle.innerHTML = icons[type] + ' ' + title;
+            modalTitle.style.color = colors[type];
+            modalBody.innerHTML = '<p>' + message + '</p>';
+            modalFooter.innerHTML = '<button class="custom-modal-btn custom-modal-btn-primary" id="custom-modal-ok">OK</button>';
+
+            overlay.style.display = 'flex';
+            modal.style.display = 'block';
+            setTimeout(() => {
+                overlay.classList.add('active');
+                modal.classList.add('active');
+            }, 10);
+
+            const closeModal = () => {
+                overlay.classList.remove('active');
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    modal.style.display = 'none';
+                }, 300);
+                resolve(true);
+            };
+
+            const okBtn = document.getElementById('custom-modal-ok');
+            const okHandler = () => closeModal();
+            const closeHandler = () => closeModal();
+            const overlayHandler = (e) => {
+                if (e.target === overlay) closeModal();
+            };
+
+            okBtn.addEventListener('click', okHandler);
+            closeBtn.addEventListener('click', closeHandler);
+            overlay.addEventListener('click', overlayHandler);
+
+            currentHandlers.push(
+                { element: okBtn, event: 'click', fn: okHandler },
+                { element: closeBtn, event: 'click', fn: closeHandler },
+                { element: overlay, event: 'click', fn: overlayHandler }
+            );
+        });
+    };
+
+    // Hàm hiển thị Confirm đẹp
+    window.showConfirm = function(message, title = 'Xác nhận') {
+        return new Promise((resolve) => {
+            clearHandlers();
+            
+            const overlay = document.getElementById('custom-modal-overlay');
+            const modal = document.getElementById('custom-modal');
+            const modalTitle = document.getElementById('custom-modal-title');
+            const modalBody = document.getElementById('custom-modal-body');
+            const modalFooter = document.getElementById('custom-modal-footer');
+            const closeBtn = document.getElementById('custom-modal-close');
+
+            modalTitle.innerHTML = '<i class="fas fa-question-circle"></i> ' + title;
+            modalTitle.style.color = '#ffc107';
+            modalBody.innerHTML = '<p>' + message + '</p>';
+            modalFooter.innerHTML = `
+                <button class="custom-modal-btn custom-modal-btn-secondary" id="custom-modal-cancel">Hủy</button>
+                <button class="custom-modal-btn custom-modal-btn-primary" id="custom-modal-confirm">Xác nhận</button>
+            `;
+
+            overlay.style.display = 'flex';
+            modal.style.display = 'block';
+            setTimeout(() => {
+                overlay.classList.add('active');
+                modal.classList.add('active');
+            }, 10);
+
+            const closeModal = (result) => {
+                overlay.classList.remove('active');
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    modal.style.display = 'none';
+                }, 300);
+                resolve(result);
+            };
+
+            // Gắn event listeners mới
+            const confirmBtn = document.getElementById('custom-modal-confirm');
+            const cancelBtn = document.getElementById('custom-modal-cancel');
+            
+            const confirmHandler = () => closeModal(true);
+            const cancelHandler = () => closeModal(false);
+            const closeHandler = () => closeModal(false);
+            const overlayHandler = (e) => {
+                if (e.target === overlay) closeModal(false);
+            };
+
+            confirmBtn.addEventListener('click', confirmHandler);
+            cancelBtn.addEventListener('click', cancelHandler);
+            closeBtn.addEventListener('click', closeHandler);
+            overlay.addEventListener('click', overlayHandler);
+
+            currentHandlers.push(
+                { element: confirmBtn, event: 'click', fn: confirmHandler },
+                { element: cancelBtn, event: 'click', fn: cancelHandler },
+                { element: closeBtn, event: 'click', fn: closeHandler },
+                { element: overlay, event: 'click', fn: overlayHandler }
+            );
+        });
+    };
+
+    // Override alert() và confirm() mặc định
+    window.alert = function(message) {
+        return showAlert(message, 'Thông báo', 'info');
+    };
+
+    // Helper function để sử dụng confirm trong onclick
+    // Sử dụng: onclick="return confirmDelete('Bạn có chắc muốn xóa?', this.href)"
+    window.confirmDelete = function(message, url) {
+        showConfirm(message || 'Bạn có chắc muốn xóa?', 'Xác nhận').then(result => {
+            if (result && url) {
+                window.location.href = url;
+            }
+        });
+        return false;
+    };
+
+    // Override confirm() - trả về Promise
+    window.confirm = function(message) {
+        return showConfirm(message, 'Xác nhận');
+    };
+})();
