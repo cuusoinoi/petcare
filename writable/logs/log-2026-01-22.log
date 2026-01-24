@@ -1,0 +1,393 @@
+CRITICAL - 2026-01-22 09:15:25 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: admin/users/edit/1]
+in APPPATH\Views\admin\user\edit_user.php on line 24.
+ 1 APPPATH\Views\admin\user\edit_user.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\edit_user.php', 24)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\edit_user.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/edit_user', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(119): view('admin/user/edit_user', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:15:31 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\admin\user\users.php on line 46.
+ 1 APPPATH\Views\admin\user\users.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/users', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(39): view('admin/user/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:15:44 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\admin\user\users.php on line 46.
+ 1 APPPATH\Views\admin\user\users.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/users', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(39): view('admin/user/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:15:46 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\admin\user\users.php on line 46.
+ 1 APPPATH\Views\admin\user\users.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/users', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(39): view('admin/user/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:15:54 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:19:06 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:19:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/user/change_password.php"
+[Method: GET, Route: admin/users/change-password]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/user/change_password.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/change_password', [], true)
+ 3 APPPATH\Controllers\Admin\UserController.php(222): view('admin/user/change_password', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->changePassword()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:19:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/user/change_password.php"
+[Method: GET, Route: admin/users/change-password]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/user/change_password.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/change_password', [], true)
+ 3 APPPATH\Controllers\Admin\UserController.php(222): view('admin/user/change_password', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->changePassword()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:19:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/pet_enclosure/checkout_invoice.php"
+[Method: GET, Route: admin/pet-enclosures/checkout/11]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/pet_enclosure/checkout_invoice.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/pet_enclosure/checkout_invoice', [], true)
+ 3 APPPATH\Controllers\Admin\PetEnclosureController.php(253): view('admin/pet_enclosure/checkout_invoice', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\PetEnclosureController->checkout('11')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PetEnclosureController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:24:52 --> ErrorException: Undefined array key "service_type_price"
+[Method: GET, Route: admin/invoices/edit/17]
+in APPPATH\Views\admin\invoice\edit_invoice.php on line 70.
+ 1 APPPATH\Views\admin\invoice\edit_invoice.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_price"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/invoice/edit_invoice', [], true)
+ 5 APPPATH\Controllers\Admin\InvoiceController.php(164): view('admin/invoice/edit_invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\InvoiceController->edit('17')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\InvoiceController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:25:06 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\admin\user\users.php on line 46.
+ 1 APPPATH\Views\admin\user\users.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/users', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(39): view('admin/user/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:34:54 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:35:40 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:36:08 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\admin\user\users.php on line 46.
+ 1 APPPATH\Views\admin\user\users.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\user\\users.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/user/users', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(39): view('admin/user/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:36:36 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 09:37:26 --> ErrorException: Undefined array key "service_type_name"
+[Method: GET, Route: admin/service-types]
+in APPPATH\Views\admin\service_type\service_types.php on line 45.
+ 1 APPPATH\Views\admin\service_type\service_types.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_name"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php', 45)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\service_type\\service_types.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/service_type/service_types', [], true)
+ 5 APPPATH\Controllers\Admin\ServiceTypeController.php(39): view('admin/service_type/service_types', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\ServiceTypeController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\ServiceTypeController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 10:07:07 --> ErrorException: Undefined array key "service_type_price"
+[Method: GET, Route: admin/invoices/edit/12]
+in APPPATH\Views\admin\invoice\edit_invoice.php on line 70.
+ 1 APPPATH\Views\admin\invoice\edit_invoice.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_price"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/invoice/edit_invoice', [], true)
+ 5 APPPATH\Controllers\Admin\InvoiceController.php(164): view('admin/invoice/edit_invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\InvoiceController->edit('12')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\InvoiceController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 10:07:14 --> ErrorException: Undefined array key "service_type_price"
+[Method: GET, Route: admin/invoices/edit/5]
+in APPPATH\Views\admin\invoice\edit_invoice.php on line 70.
+ 1 APPPATH\Views\admin\invoice\edit_invoice.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_price"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/invoice/edit_invoice', [], true)
+ 5 APPPATH\Controllers\Admin\InvoiceController.php(164): view('admin/invoice/edit_invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\InvoiceController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\InvoiceController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 10:07:49 --> ErrorException: Undefined array key "service_type_price"
+[Method: GET, Route: admin/invoices/edit/11]
+in APPPATH\Views\admin\invoice\edit_invoice.php on line 70.
+ 1 APPPATH\Views\admin\invoice\edit_invoice.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "service_type_price"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php', 70)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\invoice\\edit_invoice.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/invoice/edit_invoice', [], true)
+ 5 APPPATH\Controllers\Admin\InvoiceController.php(164): view('admin/invoice/edit_invoice', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\InvoiceController->edit('11')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\InvoiceController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 14:28:03 --> ErrorException: Undefined array key "checkin_date"
+[Method: GET, Route: admin/print/pet-enclosure/20]
+in APPPATH\Views\admin\print\pet_enclosure.php on line 89.
+ 1 APPPATH\Views\admin\print\pet_enclosure.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "checkin_date"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php', 89)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/print/pet_enclosure', [], true)
+ 5 APPPATH\Controllers\Admin\PrintController.php(163): view('admin/print/pet_enclosure', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\PrintController->petEnclosure('20')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 14:39:22 --> ErrorException: Undefined array key "checkin_date"
+[Method: GET, Route: admin/print/pet-enclosure/20]
+in APPPATH\Views\admin\print\pet_enclosure.php on line 89.
+ 1 APPPATH\Views\admin\print\pet_enclosure.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "checkin_date"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php', 89)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/print/pet_enclosure', [], true)
+ 5 APPPATH\Controllers\Admin\PrintController.php(163): view('admin/print/pet_enclosure', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\PrintController->petEnclosure('20')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 14:39:44 --> ErrorException: Undefined array key "checkin_date"
+[Method: GET, Route: admin/print/pet-enclosure/20]
+in APPPATH\Views\admin\print\pet_enclosure.php on line 89.
+ 1 APPPATH\Views\admin\print\pet_enclosure.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "checkin_date"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php', 89)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\pet_enclosure.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/print/pet_enclosure', [], true)
+ 5 APPPATH\Controllers\Admin\PrintController.php(163): view('admin/print/pet_enclosure', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\PrintController->petEnclosure('20')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 14:42:23 --> ErrorException: Undefined array key "visit_datetime"
+[Method: GET, Route: admin/print/medical-record/1]
+in APPPATH\Views\admin\print\medical_record.php on line 84.
+ 1 APPPATH\Views\admin\print\medical_record.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "visit_datetime"', 'C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\medical_record.php', 84)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\petcare\\app\\Views\\admin\\print\\medical_record.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/print/medical_record', [], true)
+ 5 APPPATH\Controllers\Admin\PrintController.php(103): view('admin/print/medical_record', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\PrintController->medicalRecord('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\PrintController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 15:56:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/appointment/view.php"
+[Method: GET, Route: admin/appointments/view/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/appointment/view.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/appointment/view', [], true)
+ 3 APPPATH\Controllers\Admin\AppointmentController.php(137): view('admin/appointment/view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AppointmentController->view('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AppointmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-01-22 15:57:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/appointment/view.php"
+[Method: GET, Route: admin/appointments/view/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/appointment/view.php')
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('admin/appointment/view', [], true)
+ 3 APPPATH\Controllers\Admin\AppointmentController.php(137): view('admin/appointment/view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AppointmentController->view('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AppointmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-01-22 17:08:38 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'petcare' in C:\xampp\htdocs\petcare\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\petcare\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'petcare', 3306, '', 0)
+#1 C:\xampp\htdocs\petcare\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\petcare\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\petcare\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\petcare\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\petcare\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\petcare\app\Models\UserModel.php(53): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\petcare\app\Controllers\AuthController.php(47): App\Models\UserModel->authenticate('admin', 'admin')
+#8 C:\xampp\htdocs\petcare\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#9 C:\xampp\htdocs\petcare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\petcare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\petcare\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\petcare\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\petcare\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'petcare' in C:\xampp\htdocs\petcare\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\petcare\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\petcare\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\petcare\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\petcare\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\petcare\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\petcare\app\Models\UserModel.php(53): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\petcare\app\Controllers\AuthController.php(47): App\Models\UserModel->authenticate('admin', 'admin')
+#7 C:\xampp\htdocs\petcare\system\CodeIgniter.php(933): App\Controllers\AuthController->login()
+#8 C:\xampp\htdocs\petcare\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\petcare\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\petcare\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\petcare\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\petcare\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-01-22 17:08:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'petcare'
+[Method: POST, Route: admin/login]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(53): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\AuthController.php(47): App\Models\UserModel->authenticate('admin', 'admin')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
