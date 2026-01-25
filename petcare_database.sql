@@ -296,7 +296,8 @@ INSERT INTO users (username, password, fullname, avatar, role, create_at) VALUES
 ('lethimai', 'e3afed0047b08059d0fada10f400c1e5', 'Lê Thị Mai', NULL, 'staff', NOW()),
 ('tranhung', 'e3afed0047b08059d0fada10f400c1e5', 'Trần Văn Hùng', NULL, 'staff', NOW()),
 ('nguyenlan', 'e3afed0047b08059d0fada10f400c1e5', 'Nguyễn Thị Lan', NULL, 'staff', NOW()),
-('phamquang', 'e3afed0047b08059d0fada10f400c1e5', 'Phạm Quang Minh', NULL, 'staff', NOW());
+('phamquang', 'e3afed0047b08059d0fada10f400c1e5', 'Phạm Quang Minh', NULL, 'staff', NOW()),
+('0901234567', 'e10adc3949ba59abbe56e057f20f883e', 'Khách hàng', NULL, 'customer', NOW());
 
 -- === SERVICE TYPES ===
 INSERT INTO service_types (service_name, description, price) VALUES
@@ -379,7 +380,8 @@ INSERT INTO customers (customer_name, customer_phone_number, customer_identity_c
 ('Quách Văn Hải', '0955667799', '079234567890', '145 Phan Đăng Lưu, Phú Nhuận', NULL),
 ('Sơn Thị Linh', '0966778800', '079567890123', '67 Nguyễn Kiệm, Gò Vấp', NULL),
 ('Tạ Minh Đức', '0977889911', '079890123456', '234 Lê Văn Sỹ, Q3', 'Có chó giống lớn.'),
-('Ung Thị Hà', '0988990022', '079123098765', '98 Võ Văn Kiệt, Q6', NULL);
+('Ung Thị Hà', '0988990022', '079123098765', '98 Võ Văn Kiệt, Q6', NULL),
+('Khách hàng', '0901234567', NULL, NULL, NULL);
 
 -- === DOCTORS ===
 INSERT INTO doctors (doctor_name, doctor_phone_number, doctor_identity_card, doctor_address, doctor_note) VALUES

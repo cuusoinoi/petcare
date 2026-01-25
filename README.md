@@ -65,13 +65,16 @@ cd petcare
 
 1. Mở **phpMyAdmin** (http://localhost/phpmyadmin)
 2. Tạo database mới tên `petcare` (utf8mb4_unicode_ci)
-3. Import file `petcare_database.sql` vào database vừa tạo
+3. Import file `petcare_database.sql` trong thư mục `petcare` vào database vừa tạo
 
 ### Bước 4: Kiểm tra
 
 1. Truy cập: `http://localhost/petcare`
-2. Đăng nhập admin: `http://localhost/petcare/admin`
+2. Đăng nhập admin: `http://localhost/petcare/admin` 
+   - Tài khoản: admin, mật khẩu: 123456
 3. Đăng nhập customer: `http://localhost/petcare/customer/login`
+   - Tài khoản: 0901234567, mật khẩu: 123456
+   - Hoặc đăng kí bằng cách truy cập http://localhost/petcare/customer/register, nhập tên, SĐT + OTP 123456
 
 ---
 
